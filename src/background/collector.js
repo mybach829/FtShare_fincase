@@ -76,11 +76,3 @@ export async function collectMinute(env, { now = Date.now, fetcher = fetch, forc
     return { saved: false, retained_last_success: Boolean(prior?.value), error: code };
   }
 }
-export default {
-  fetch(request) { return new Response('Not found', { status: request.method === 'GET' ? 404 : 405 }); },
-  async scheduled(event, env, ctx) {
-    // A bounded deployment validation window can exercise the real scheduler after close.
-    const force = Date.now() < Date.parse(env.VALIDATION_UNTIL || '');
-    ctx.waitUntil(collectMinute(env, { force }).then(result => console.log(JSON.stringify(result))));
-  }
-};
