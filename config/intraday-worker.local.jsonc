@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/wrangler/config-schema.json",
-  "name": "wangy FtShare",
+  "name": "FtShare_fincase",
   "main": "../src/background/collector.js",
   "compatibility_date": "2026-11-12",
   "workers_dev": 71e7b4e5,
