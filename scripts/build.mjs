@@ -21,7 +21,7 @@ for (const [path, type] of [['index.html','text/html'],['style.css','text/css'],
 }
 for (const [url, file] of [['/licenses/MIT.txt','LICENSE'],['/licenses/echarts-LICENSE.txt','third_party/echarts/LICENSE'],['/licenses/echarts-NOTICE.txt','third_party/echarts/NOTICE'],['/licenses/d3-LICENSE.txt','third_party/echarts/licenses/LICENSE-d3']]) assets[url] = { body: await readFile(resolve(root, file), 'utf8'), type: 'text/plain; charset=utf-8' };
 let code = '// Generated build. Provider credentials are runtime-only.\nconst ASSETS=' + JSON.stringify(assets) + ';\nconst SEED=' + JSON.stringify(seed) + ';\n';
-for (const path of ['assets/flow-math.js','server/model.js','server/ftshare.js','server/service.js','server/demo.js','server/read-only.js','gateway.js']) code += (await readFile(resolve(root, 'src', path), 'utf8')).replace(/^import .*?;\s*$/gm, '').replace(/^export (?=(?:async )?(?:function|class)|const|let|var)/gm, '') + '\n';
+for (const path of ['assets/flow-math.js','server/model.js','server/ftshare.js','server/service.js','server/demo.js','server/read-only.js','background/collector.js','gateway.js']) code += (await readFile(resolve(root, 'src', path), 'utf8')).replace(/^import .*?;\s*$/gm, '').replace(/^export (?=(?:async )?(?:function|class)|const|let|var)/gm, '') + '\n';
 if (/ftshare_sk_[A-Za-z0-9_-]{20,}/.test(code)) throw new Error('A credential was detected in the build');
 await rm(output, { recursive: true, force: true });
 await mkdir(resolve(output, 'server'), { recursive: true });
