@@ -9,5 +9,6 @@
     {
       "binding": "KV",
       "id": "b6d3bcfeeb334531a521f987ed2aaa70",
-      // Optional: preview_id used when running `wrangler dev` for local dev
+   }
+ ]
 }
