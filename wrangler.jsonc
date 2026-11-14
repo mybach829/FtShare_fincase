@@ -5,11 +5,9 @@
   "compatibility_date": "2025-02-04",
   "workers_dev": true,
   "observability": { "enabled": true }
-  "kv_namespaces": [
-    {
+  "kv_namespaces": [Ftshare=kv]
       "binding": "KV",
       "id": "b6d3bcfeeb334531a521f987ed2aaa70",
-      
       // Optional: preview_id used when running `wrangler dev` for local dev
       "preview_id": "<ID_OF_PREVIEW_KV_NAMESPACE_FOR_LOCAL_DEVELOPMENT>"
 }
