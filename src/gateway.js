@@ -38,6 +38,10 @@ export function createGateway({ assets = typeof ASSETS === "undefined" ? {} : AS
       if(error.code==='not_archived')return json({error:'该日期尚未归档',code:'not_archived'},404);
       if(error.code==='cache_not_ready')return json({error:'后台行情尚未就绪；历史图表可继续查看',code:'cache_not_ready'},503);
       return json({error:error.code==='not_configured'?'数据服务尚未配置':error.code==='quota_exceeded'?'FtShare调用额度暂不可用，稍后重试':error.code==='truncated'?'本次数据不完整，稍后重试':'FtShare数据暂不可用，请稍后刷新',code:error.code||'upstream_error'},503);
+    },
+          
+     async scheduled(controller,env={},ctx{}){
+      console.log('cron fired',controller.cron,new Date().toISOSing());
     }
   }};
 }
