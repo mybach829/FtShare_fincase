@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ftshare-fincase",
-  "main": "src/index.ts",
+  "main": "dist/server/index.js",
   "compatibility_date": "2025-02-04",
   "workers_dev": true,
   "observability": { "enabled": true },
