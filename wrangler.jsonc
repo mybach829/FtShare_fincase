@@ -7,8 +7,8 @@
   "observability": { "enabled": true },
   "kv_namespaces": [
     {
-      "binding": "KV",
-      "id": "b6d3bcfeeb334531a521f987ed2aaa70",
-   }
- ]
+      "binding": "FTSHARE_CACHE",
+      "id": "b6d3bcfeeb334531a521f987ed2aaa70"
+    }
+  ]
 }
