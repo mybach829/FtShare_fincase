@@ -1,11 +1,12 @@
 {
   "$schema": "../node_modules/wrangler/config-schema.json",
-  "name": "FtShare_fincase",
+  "name": "ftshare-intraday-collector",
   "main": "../src/background/collector.js",
   "compatibility_date": "2026-11-12",
-  "workers_dev": true,
+  "workers_dev": false,
   "observability": { "enabled": true },
-  "triggers": { "crons": ["*1-8 * * MON-FRI"] },
-  "kv_namespaces": [{ "binding": "FTSHARE_CACHE", "id": "b6d3bcfeeb334531a521f987ed2aaa70" }]
-  "vars":{VALIDATION_UNTIL":"2026-11-14T23:59:59Z"}
+  "triggers": { "crons": ["* 1-8 * * MON-FRI"] },
+  "kv_namespaces": [
+    { "binding": "FTSHARE_CACHE", "id": "b6d3bcfeeb334531a521f987ed2aaa70" }
+  ]
 }
